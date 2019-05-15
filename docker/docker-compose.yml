@@ -1,0 +1,21 @@
+version: '2'
+services: 
+  apix2019-notification-nodejs:
+    image: sensedia/apix2019-microservice-notification-nodejs
+    container_name: notification
+    mem_limit: 128m
+    ports:
+      - "49160:8080"
+    environment:
+      TWILIO_FROM_PHONE: ${TWILIO_FROM_PHONE}
+      TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
+      TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
+  rabbit13:
+    image: rabbitmq:3-management
+    container_name: rabbit13
+    hostname: rabbitmq
+    mem_limit: 128m
+    ports:
+      - "9090:15672"
+      - "5672:5672"
+      - "25676:25676"           

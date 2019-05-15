@@ -1,9 +1,11 @@
-const {accountSid, authToken, fromPhone} = require('../resources/config.json');
+const utils = require('../utils/init');
+const { fromPhone, accountSid, authToken } = utils.initValues();
+
 const twilioClient = require('twilio')(accountSid, authToken);
 
 exports.formatMessage = (kit) => {
-    const { name, url } = kit;
-    return `Há combinações disponíveis para o Kit "${name}". Para visualizá-las, acesse ${url}`;
+    const { url } = kit;
+    return `Há combinações disponíveis para o Kit. Para visualizá-las, acesse ${url}`;
 }
 
 exports.sendMessage = async (formattedMessage, userPhone) => {
@@ -17,5 +19,9 @@ exports.sendMessage = async (formattedMessage, userPhone) => {
         console.log(err);
     }
 }
+
+
+
+
 
 

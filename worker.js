@@ -19,7 +19,7 @@ amqp.connect(connectionURL, function (err, conn) {
             let { to } = msg.properties.headers;
             let receivedContent = msg.content.toString();
             console.log("[x] Recebido %s", receivedContent);
-            let kit  = JSON.parse(receivedContent);
+            let kit = JSON.parse(receivedContent);
             const formattedMsg = TwilioService.formatMessage(kit);
             console.log(`[*] Preparando para enviar mensagem (${formattedMsg}) para o número ${to}`);
             TwilioService.sendMessage(formattedMsg, to);

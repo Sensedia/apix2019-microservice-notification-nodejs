@@ -3,13 +3,14 @@ Versão em node do microserviço de notification para o APIX2019
 
 Como usar:
 
-1- Antes de iniciar a aplicação, certifique-se de ter um ambiente RabbitMQ instalado em sua máquina. 
-Caso utilize docker, é possível iniciar uma instância de RabbitMQ localmente usando o seguinte comando:
+* A aplicação foi estruturada para usar um container docker. 
 
-docker run -d --hostname my-rabbit --name rabbit13 -p 9090:15672 -p 5672:5672 -p 25676:25676 rabbitmq:3-management
+1 - Execute o script 'generate-image.sh' para gerar a imagem docker da aplicação, junto com a imagem node;
 
-2- Dentro da pasta do projeto, em /resources, existe um arquivo 'config.json'. Será necessário editar as informações, accountSid e authToken com as informações presentes em sua conta do Twilio para que o envio de mensagens seja realizado corretamente;
+2 - Entre na pasta 'docker' e edite o arquivo variables.sh com as informações TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN e TWILIO_FROM_PHONE 
+com as informações presentes em sua conta do Twilio para que o envio de mensagens seja realizado corretamente;
 
-3- Caso necessário, altere o nome da fila que recebe as mensagens do RabbitMQ no atributo 'queue';
+3- Execute o comando docker-start.sh para iniciar o container da aplicação;
 
-3- Inicialize o consumer de mensagens da fila com o comando 'npm run worker'; 
+* Use o comando update-notification.sh para atualizar a imagem do docker caso tenha feito alguma alteração de código
+* O arquivo docker-compose.yml contém os comandos de geração do docker do rabbitmq

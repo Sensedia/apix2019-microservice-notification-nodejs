@@ -1,0 +1,20 @@
+{
+  "name": "rabbitmq-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "worker": "nodemon worker.js",
+    "publish": "nodemon publish.js",
+    "subscribe": "nodemon subscribe.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.3",
+    "twilio": "^3.30.3"
+  }
+}

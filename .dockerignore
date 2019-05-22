@@ -1,0 +1,11 @@
+node_modules
+/.vscode/
+Dockerfile*
+/docker/
+.git
+.gitignore
+README.md
+LICENSE
+.env
+/repository/*.json
+*.sh

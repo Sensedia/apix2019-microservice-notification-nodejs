@@ -10,6 +10,8 @@ services:
       TWILIO_FROM_PHONE: ${TWILIO_FROM_PHONE}
       TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
       TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
+    networks:
+      - apix2019
   rabbit13:
     image: rabbitmq:3-management
     container_name: rabbit13
@@ -18,4 +20,10 @@ services:
     ports:
       - "9090:15672"
       - "5672:5672"
-      - "25676:25676"           
+      - "25676:25676"
+    networks:
+      - apix2019
+networks:
+  apix2019:
+    external:
+      name: apix2019           

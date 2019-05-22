@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "worker": "nodemon worker.js",
-    "publish": "nodemon publish.js",
-    "subscribe": "nodemon subscribe.js"
+    "start": "node app.js",
+    "worker": "node worker.js",
+    "publish": "node publish.js",
+    "subscribe": "node subscribe.js"
   },
   "keywords": [],
   "author": "",

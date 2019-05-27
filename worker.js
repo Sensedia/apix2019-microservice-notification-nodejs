@@ -14,15 +14,13 @@ amqp.connect(connectionURL, function (err, conn) {
         }
         ch.assertQueue(queue, { durable: false });
         ch.prefetch(1);
-        console.log(`[*] Aguardando por mensagens na fila -> ${queue}. Para sair, pressione CTRL+C`);
+        console.log(`[*] Waiting for messages in queue -> ${queue}. Para sair, pressione CTRL+C`);
         ch.consume(queue, function (msg) {
-            let { to } = msg.properties.headers;
-            let receivedContent = msg.content.toString();
-            console.log("[x] Recebido %s", receivedContent);
-            let kit = JSON.parse(receivedContent);
-            const formattedMsg = TwilioService.formatMessage(kit);
-            console.log(`[*] Preparando para enviar mensagem (${formattedMsg}) para o número ${to}`);
-            TwilioService.sendMessage(formattedMsg, to);
+            let { phone } = JSON.parse(msg.content.toString());
+            console.log("[x] Received %s", phone);
+            const formattedMsg = TwilioService.formatMessage();
+            console.log(`[*] Getting ready to send message (${formattedMsg}) to the phone number ${phone}`);
+            TwilioService.sendMessage(formattedMsg, phone);
         }, { noAck: true });
     });
 });

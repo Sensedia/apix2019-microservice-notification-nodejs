@@ -3,9 +3,8 @@ const { fromPhone, accountSid, authToken } = utils.initValues();
 
 const twilioClient = require('twilio')(accountSid, authToken);
 
-exports.formatMessage = (kit) => {
-    const { url } = kit;
-    return `Há combinações disponíveis para o Kit. Para visualizá-las, acesse ${url}`;
+exports.formatMessage = () => {
+    return `There are combinations available for the requested kit. To visualize them, access PobreFit.`;
 }
 
 exports.sendMessage = async (formattedMessage, userPhone) => {

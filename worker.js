@@ -16,7 +16,7 @@ amqp.connect(connectionURL, function (err, conn) {
         ch.prefetch(1);
         console.log(`[*] Waiting for messages in queue -> ${queue}. Para sair, pressione CTRL+C`);
         ch.consume(queue, function (msg) {
-            let { phone } = JSON.parse(msg.content.toString());
+            let phone = msg.content.toString();
             console.log("[x] Received %s", phone);
             const formattedMsg = TwilioService.formatMessage();
             console.log(`[*] Getting ready to send message (${formattedMsg}) to the phone number ${phone}`);

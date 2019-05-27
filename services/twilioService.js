@@ -13,7 +13,7 @@ exports.sendMessage = async (formattedMessage, userPhone) => {
             body: formattedMessage,
             from: fromPhone,
             to: userPhone
-        }).then(message => console.log(`Mensagem enviada! -> SID ${message.sid}`));
+        }).then(message => console.log(`Message Sent! -> SID ${message.sid}`));
     } catch(err){
         console.log(err);
     }

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-export TWILIO_ACCOUNT_SID="AC7d4f91d3c32ea20780d58873f8cfbeea"
-export TWILIO_AUTH_TOKEN="80fc1d8cc08c1ca04f37e4d2f6c4fafc"
-export TWILIO_FROM_PHONE="+12064294463"
+export TWILIO_ACCOUNT_SID="your_accountid"
+export TWILIO_AUTH_TOKEN="your_auth_token"
+export TWILIO_FROM_PHONE="your_twilio_phone"

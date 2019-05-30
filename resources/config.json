@@ -1,5 +1,4 @@
 {
     "connectionURL" : "amqp://rabbitmq:5672",
-    "queue": "apix-notification-queue",
-    "exchange" : "pub_sub_apix2019"
+    "queue": "apix-notification-queue"
 }

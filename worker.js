@@ -14,7 +14,7 @@ amqp.connect(connectionURL, function (err, conn) {
         }
         ch.assertQueue(queue, { durable: false });
         ch.prefetch(1);
-        console.log(`[*] Waiting for messages in queue -> ${queue}. Para sair, pressione CTRL+C`);
+        console.log(`[*] Waiting for messages in queue -> ${queue}. To exit, press CTRL+C`);
         ch.consume(queue, function (msg) {
             let { phone, numberOfCombinationsFound } = JSON.parse(msg.content.toString());
             console.log(`[x] Received - Phone ${phone} | Combinations ${numberOfCombinationsFound}`);

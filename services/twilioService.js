@@ -3,8 +3,11 @@ const { fromPhone, accountSid, authToken } = utils.initValues();
 
 const twilioClient = require('twilio')(accountSid, authToken);
 
-exports.formatMessage = () => {
-    return `There are combinations available for the requested kit. To visualize them, access PobreFit.`;
+exports.formatMessage = (numberOfCombinations) => {
+  if(numberOfCombinations > 0)
+    return `There are ${numberOfCombinations} combinations available for the requested kit. To visualize them, access PobreFit.`;
+  else
+    return `Unfortunately we haven't found any combinations for the requested kit.`;
 }
 
 exports.sendMessage = async (formattedMessage, userPhone) => {
@@ -18,9 +21,3 @@ exports.sendMessage = async (formattedMessage, userPhone) => {
         console.log(err);
     }
 }
-
-
-
-
-
-

@@ -1,6 +1,6 @@
 const amqp = require('amqplib/callback_api');
 const { connectionURL, queue } = require('./resources/config');
-const TwilioService = require('./services/twilioService');
+//OBS: Importar arquivo 'twilioService.js'
 
 amqp.connect(connectionURL, function (err, conn) {
     if(err){
@@ -18,9 +18,8 @@ amqp.connect(connectionURL, function (err, conn) {
         ch.consume(queue, function (msg) {
             let { phone, numberOfCombinationsFound } = JSON.parse(msg.content.toString());
             console.log(`[x] Received - Phone ${phone} | Combinations ${numberOfCombinationsFound}`);
-            const formattedMsg = TwilioService.formatMessage(numberOfCombinationsFound);
-            console.log(`[*] Getting ready to send message (${formattedMsg}) to the phone number ${phone}`);
-            TwilioService.sendMessage(formattedMsg, phone);
+            //TODO - Preparar mensagem para receber a mensagem do RabbitMQ e enviar SMS usando a integração com o Twilio
+            
         }, { noAck: true });
     });
 });

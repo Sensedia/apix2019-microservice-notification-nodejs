@@ -9,7 +9,7 @@ Versão em node do microserviço de notification para o APIX2019
 
 3- Execute o comando docker-start.sh para iniciar o container da aplicação;
 
-OBS: Use o comando update-notification.sh para atualizar a imagem do docker caso tenha feito alguma alteração de código
+OBS: Caso tenha feito alguma alteração de código, gere novamente a imagem docker usando o comando 'generate-image.sh' e depois use o comando 'update-notification.sh', na pasta 'docker', para subir um novo container. 
 
 ### Como usar localmente:
 

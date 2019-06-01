@@ -1,7 +1,7 @@
 # apix2019-notification-nodejs :iphone:
 Versão em node do microserviço de notification para o APIX2019
 
-### Como usar com docker:
+### Como executar via docker:
 
 1 - Execute o script 'generate-image.sh', presente na pasta raiz do projeto, para gerar a imagem docker da aplicação, junto com a imagem node;
 
@@ -11,7 +11,7 @@ Versão em node do microserviço de notification para o APIX2019
 
 OBS: Caso tenha feito alguma alteração de código, gere novamente a imagem docker usando o comando 'generate-image.sh' e depois use o comando 'update-notification.sh', na pasta 'docker', para subir um novo container. 
 
-### Como usar localmente:
+### Como executar localmente:
 
 1 - Edite o arquivo '.env' presente dentro do projeto com os valores das variáveis TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN e TWILIO_FROM_PHONE com as informações presentes em sua conta do Twilio para que o envio de mensagens seja realizado corretamente;
 
@@ -19,7 +19,7 @@ OBS: Caso tenha feito alguma alteração de código, gere novamente a imagem doc
 
 3 - No terminal, entre na pasta do projeto e execute o comando 'npm start'.
 
-### Como realizar debug da aplicação:
+### Como fazer debug da aplicação:
 
 1 - Realizar os passos da seção "Como usar localmente";
 

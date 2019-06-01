@@ -27,4 +27,17 @@ OBS: Caso tenha feito alguma alteração de código, gere novamente a imagem doc
 
 3 - No arquivo mostrado depois de clicar no icone anterior, mudar o valor do atributo "program" para '${workspaceFolder}/worker.js'
 
+### Como testar se o microserviço está disparando a mensagem SMS adequadamente:
+
+Opção 1 - Para testar o fluxo completo, acesse o README do microserviço de kit e inicie criando um kit, fazendo o post descrito lá. Para testar o fluxo desde a entrada, é necessário que os microserviços de kit, crawler e finder estejam rodando.
+
+Opção 2 - Para testar esse microserviço isoladamente, você pode postar uma mensagem diretamente na fila 'apix-notification-queue', com o seguinte payload:
+
+```
+{  
+   "phone":"19999999999",
+   "numberOfCombinationsFound": 3
+}
+
+```
 

@@ -5,7 +5,7 @@ const twilioClient = require('twilio')(accountSid, authToken);
 
 exports.formatMessage = (numberOfCombinations) => {
   if(numberOfCombinations > 0)
-    return `There are ${numberOfCombinations} combinations available for the requested kit. To visualize them, access PobreFit.`;
+    return `There are ${numberOfCombinations} combinations available for the requested kit. To visualize them, access BaratoFit.`;
   else
     return `Unfortunately we haven't found any combinations for the requested kit.`;
 }
